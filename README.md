@@ -1,3 +1,7 @@
+# IMPORTANT NOTE
+
+I copied necessary infrastructure code into `./_infra`
+
 # Learn Jenkins App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
