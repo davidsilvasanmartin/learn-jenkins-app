@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:18-alpine'
+                    image 'node:22-alpine'
                     // This is so that one single workspace is used and shared by the Jenkins agent and
                     // all Docker containers
                     reuseNode true
