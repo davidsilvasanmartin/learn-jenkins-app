@@ -16,6 +16,7 @@ pipeline {
                     ls -lah
                     node --version
                     npm --version
+                    rm -rf node_modules
                     npm ci
                     npm run build
                     ls -lah
@@ -23,10 +24,16 @@ pipeline {
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:22-bookworm'
+                    reuseNode true
+                }
+            }
             steps {
                 sh '''
                     echo "Test stage"
-                    npm test
+                    CI=true npm test
                 '''
             }
         }
